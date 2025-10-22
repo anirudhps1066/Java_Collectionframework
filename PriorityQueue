@@ -1,0 +1,38 @@
+package PriorityQueue;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+class myCom implements Comparator<Integer>{
+
+	@Override
+	public int compare(Integer o1, Integer o2) {
+		if(o1<o2) return 1;
+		if(o1>o2) return -1;
+		return 0;
+	}
+	
+}
+
+public class Demo {
+
+	public static void main(String[] args)
+ {
+		PriorityQueue<Integer> p= new PriorityQueue<Integer>(new myCom());
+		
+		p.add(20);
+		p.add(30);
+		p.add(4);
+		p.add(25);
+		p.add(2);
+		
+		System.out.println(p.peek());
+		System.out.println("Before Deletion");
+		System.out.println(p);
+		System.out.println("After Deletion");
+		p.poll();
+		System.out.println(p);
+
+	}
+
+}
